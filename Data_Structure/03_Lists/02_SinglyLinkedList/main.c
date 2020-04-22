@@ -20,7 +20,7 @@ void displayLinkedList(LinkedList *pList)
     }
 }
 
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
     int i = 0;
     int arrayCount = 0;

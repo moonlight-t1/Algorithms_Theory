@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "ArrayList.h"
 
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
     int i = 0;
     int arrayCount = 0;
