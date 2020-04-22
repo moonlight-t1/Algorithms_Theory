@@ -21,7 +21,7 @@ ArrayList *createArrayList(int maxElementCount)
         }
         else
         {
-            printf("Error. Memory Allocation at createArrayList()\n");
+            printf("Error. Memory Allocation Falied. createArrayList()\n");
             return NULL;
         }
     }
@@ -36,7 +36,7 @@ ArrayList *createArrayList(int maxElementCount)
 
     if (pReturn->pElement == NULL) // 원소를 저장하는 배열 메모리 할당 및 점검
     {
-        printf("Error. Second Memory Allocation. createArrayList() \n");
+        printf("Error. Second Memory Allocation Failed. createArrayList() \n");
         free(pReturn);
         return NULL;
     }
@@ -144,13 +144,13 @@ void displayArrayList(ArrayList *pList)
         // 저장된 원소의 값을 출력
         for (i = 0; i < pList->currentElementCount; i++)
         {
-            printf("[%d], %d\n", i, getALElement(pList, i)->data);
+            printf("[%d] - %d\n", i, getALElement(pList, i)->data);
         }
 
         i = pList->currentElementCount;
         for (; i < pList->maxElementCount; i++)
         {
-            printf("[%d], Empty\n", i);
+            printf("[%d] - Empty\n", i);
         }
     }
     else
