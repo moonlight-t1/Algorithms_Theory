@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "linkedlistop.h": "c"
+        "linkedlistop.h": "c",
+        "stdio.h": "c"
     }
 }
