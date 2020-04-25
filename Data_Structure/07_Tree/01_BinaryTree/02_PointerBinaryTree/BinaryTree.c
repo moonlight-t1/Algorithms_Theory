@@ -33,6 +33,7 @@ BinTree *makeBinTree(BinTreeNode rootNode)
     return pReturn;
 }
 
+// 트리의 루트 노드 반환
 BinTreeNode *getRootNodeBT(BinTree *pBinTree)
 {
     BinTreeNode *pReturn = NULL;

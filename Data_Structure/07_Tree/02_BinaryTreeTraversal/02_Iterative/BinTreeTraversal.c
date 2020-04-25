@@ -60,11 +60,11 @@ void preorderTraversalBinTree(BinTree *pBinTree)
             pStackNode = popLS(pStack);
             if (pStackNode != NULL)
             {
-                pRootNode = pStackNode->data;
-                printf("%c ", pRootNode->data);
+                pRootNode = pStackNode->data;   // 팝 한 노드를 새로운 루트 노드로 지정
+                printf("%c ", pRootNode->data); // 새로운 루트 노드 출력
 
-                pLeftChildNode = getLeftChildNodeBT(pRootNode);
-                pRightChildNode = getRightChildNodeBT(pRootNode);
+                pLeftChildNode = getLeftChildNodeBT(pRootNode);   // 새로운 루트 노드의 왼쪽 자식 노드
+                pRightChildNode = getRightChildNodeBT(pRootNode); // 새로운 루트 노드의 오른쪽 자식 노드
 
                 // 오른쪽 서브트리를 푸시한다
                 if (pRightChildNode != NULL)
