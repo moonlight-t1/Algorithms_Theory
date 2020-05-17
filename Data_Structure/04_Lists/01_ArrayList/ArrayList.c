@@ -196,7 +196,7 @@ void deleteArrayList(ArrayList *pList)
 }
 
 // 맨 앞에 원소 추가
-int AddALElementFirst(ArrayList *pList, int element)
+int addALElementFirst(ArrayList *pList, int element)
 {
     int position = 0;
     ArrayListNode node;

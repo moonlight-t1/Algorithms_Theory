@@ -104,7 +104,7 @@ int removeDLElement(DoublyList *pList, int position)
 
             pPreNode->pRLink = pDelNode->pRLink; // 삭제할 노드의 이전 노드를 삭제할 노드 다음 노드와 연결
             pDelNode->pRLink->pLLink = pPreNode; // 삭제할 노드의 다음 노드를 삭제할 노드의 이전노드와 연결
-            free(pDelNode);
+            free(pDelNode);                      // 삭제할 노드(pDelNode)의 메모리를 해제한다.
 
             pList->currentElementCount--;
             ret = TRUE;

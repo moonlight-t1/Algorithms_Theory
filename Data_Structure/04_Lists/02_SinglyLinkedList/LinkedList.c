@@ -26,7 +26,7 @@ LinkedList *createLinkedList()
 }
 
 // 노드 추가
-int AddLLElement(LinkedList *pList, int position, ListNode element)
+int addLLElement(LinkedList *pList, int position, ListNode element)
 {
     int ret = FALSE;
     int i = 0;

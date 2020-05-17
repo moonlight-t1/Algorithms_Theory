@@ -34,13 +34,13 @@ int main(int argc, char *argv[])
     if (pList != NULL)
     {
         node.data = 1;
-        AddLLElement(pList, 0, node);
+        addLLElement(pList, 0, node);
 
         node.data = 3;
-        AddLLElement(pList, 1, node);
+        addLLElement(pList, 1, node);
 
         node.data = 5;
-        AddLLElement(pList, 2, node);
+        addLLElement(pList, 2, node);
         displayLinkedList(pList);
 
         removeLLElement(pList, 0);

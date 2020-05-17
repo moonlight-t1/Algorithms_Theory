@@ -12,7 +12,7 @@ typedef struct ArrayStackType
 {
     int maxElementCount;      // 최대 원소 개수
     int currentElementCount;  // 현재 원소의 개수
-    ArrayStackNode *pElement; // 노즈 저장을 위한 1차원 array
+    ArrayStackNode *pElement; // 노드 저장을 위한 1차원 array
 } ArrayStack;
 
 ArrayStack *createArrayStack(int maxElementCount);

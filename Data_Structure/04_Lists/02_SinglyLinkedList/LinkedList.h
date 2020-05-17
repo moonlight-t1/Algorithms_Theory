@@ -15,10 +15,10 @@ typedef struct LinkedListType
     ListNode headerNode;     // 헤더 노드(Header Node)
 } LinkedList;
 
-LinkedList *createLinkedList();
-int AddLLElement(LinkedList *pList, int position, ListNode element);
-int removeLLElement(LinkedList *pList, int position);
-ListNode *getLLElement(LinkedList *pList, int position);
+LinkedList *createLinkedList();                                      // 연결 리스트 생성
+int addLLElement(LinkedList *pList, int position, ListNode element); // 노드 추가
+int removeLLElement(LinkedList *pList, int position);                // 노드 삭제
+ListNode *getLLElement(LinkedList *pList, int position);             // 리스트 원소 반환
 
 void clearLinkedList(LinkedList *pList);
 int getLinkedListLength(LinkedList *pList);

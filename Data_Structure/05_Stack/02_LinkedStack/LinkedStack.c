@@ -62,7 +62,7 @@ StackNode *popLS(LinkedStack *pStack)
         {
             pReturn = pStack->pTopElement;        // 반환 노드 설정
             pStack->pTopElement = pReturn->pLink; // 탑 노드 변경, 반환 노드의 다음 노드가 탑 노드가 된다
-            pReturn->pLink = NULL;                //반환 노드의 다음 노드로 NULL 설정
+            pReturn->pLink = NULL;                // 반환 노드의 다음 노드로 NULL 설정
             pStack->currentElementCount--;
         }
     }

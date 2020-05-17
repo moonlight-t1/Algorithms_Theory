@@ -15,17 +15,17 @@ typedef struct ArrayListType
     ArrayListNode *pElement; // 원소 저장을 위한 1차원 배열
 } ArrayList;
 
-ArrayList *createArrayList(int maxElementCount);
-void deleteArrayList(ArrayList *pList);
-int isArrayListFull(ArrayList *pList);
-int addALElement(ArrayList *pList, int position, ArrayListNode element);
-int removeALElement(ArrayList *pList, int poistion);
-ArrayListNode *getALElement(ArrayList *pList, int position);
+ArrayList *createArrayList(int maxElementCount);                         // 리스트 생성
+void deleteArrayList(ArrayList *pList);                                  // 리스트 삭제
+int isArrayListFull(ArrayList *pList);                                   // 원소 추가 가능 여부 판단
+int addALElement(ArrayList *pList, int position, ArrayListNode element); // 원소 추가
+int removeALElement(ArrayList *pList, int poistion);                     // 원소 제거
+void clearArrayList(ArrayList *pList);                                   // 원소 초기화
+int getArrayListLength(ArrayList *pList);                                // 원소 갯수
+ArrayListNode *getALElement(ArrayList *pList, int position);             // 원소 반환
 void displayArrayList(ArrayList *pList);
-void clearArrayList(ArrayList *pList);
-int getArrayListLength(ArrayList *pList);
 
-int AddALElementFirst(ArrayList *pList, int element);
+int addALElementFirst(ArrayList *pList, int element);
 int addALElementLast(ArrayList *pList, int element);
 
 #endif

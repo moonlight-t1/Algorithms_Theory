@@ -90,7 +90,7 @@ int addCLElement(CircularList *pList, int position, CircularListNode element)
                 }
                 // Case 2 : 중간에 노드를 삽입하는 경우
                 pNewNode->pLink = pPreNode->pLink; // 새 노드를 다음 노드를 가리키게 한다
-                pPreNode->pLink = pNewNode;        // 새 노드의 이전 노드를 새 노드를 가리키게 하낟
+                pPreNode->pLink = pNewNode;        // 새 노드의 이전 노드를 새 노드를 가리키게 한다.
             }
 
             pList->currentElementCount++;

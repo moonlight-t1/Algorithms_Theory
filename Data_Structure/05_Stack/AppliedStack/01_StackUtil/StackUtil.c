@@ -122,7 +122,7 @@ int checkBracketMatching(char *pSource)
                 // 읽어들인 문자가 닫는 괄호이면 스택에서 팝
                 pNode = popLS(pStack);
                 // 만약 팝 된 문자가 없다면 오류가 발생
-                // 여는 괄호와 닫는 괄호의 갯수가 맞지 않는 경우이다.
+                // 여는 괄호와 닫는 괄호의 개수가 맞지 않는 경우이다.
                 if (pNode == NULL)
                 {
                     ret = FALSE;
@@ -147,7 +147,7 @@ int checkBracketMatching(char *pSource)
             } // end-of-switch
         }     // end-of-for
         // 스택에 남아 있는 노드가 있으면 오류
-        // 여는 과롷와 닫는괄호의 갯수가 맞지 않는 경우이다.
+        // 여는 괄호와 닫는괄호의 개수 맞지 않는 경우이다.
         if (isLinkedStackEmpty(pStack) == FALSE)
         {
             ret = FALSE;

@@ -5,6 +5,18 @@
 #include "exprLinkedStack.h"
 #include "StackCalc.h"
 
+// 스택 푸시 함수 pushLS()를 편하게 사용하기 위한 함수
+int pushLSExprToken(LinkedStack *pStack, ExprToken data)
+{
+    // 임시로 StackNode 변수 node를 만들어 함수 pushLS 호출
+    StackNode node = {
+        0,
+    };
+    node.data = data;
+    return pushLS(pStack, node);
+}
+
+// 후위 표식 계산
 void calcExpr(ExprToken *pExprTokens, int tokenCount)
 {
     LinkedStack *pStack = NULL;
@@ -64,7 +76,7 @@ void calcExpr(ExprToken *pExprTokens, int tokenCount)
                             break;
                         }
 
-                        // (3) 연산한 결관느 다시 스택에 푸시한다
+                        // (3) 연산한 결과는 다시 스택에 푸시한다
                         pushLSExprToken(pStack, newToken);
                         free(pNode1);
                     }
@@ -84,16 +96,6 @@ void calcExpr(ExprToken *pExprTokens, int tokenCount)
         }
         deleteLinkedStack(pStack);
     }
-}
-
-int pushLSExprToken(LinkedStack *pStack, ExprToken data)
-{
-    // 임시로 StackNode 변수 node를 만들어 함수 pushLS 호출
-    StackNode node = {
-        0,
-    };
-    node.data = data;
-    return pushLS(pStack, node);
 }
 
 // 중위 표기법을 후위 표기법으로
