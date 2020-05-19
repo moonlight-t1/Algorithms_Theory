@@ -3,7 +3,7 @@
 #include "BinaryTree.h"
 #include "BinTreeTraversalRec.h"
 
-// 재귀 전위 순회
+// 전위 순회
 void preorderTraversalRecursiveBinTree(BinTree *pBinTree)
 {
     if (pBinTree != NULL)
@@ -11,6 +11,8 @@ void preorderTraversalRecursiveBinTree(BinTree *pBinTree)
         preorderTraversalRecursiveBinTreeNode(pBinTree->pRootNode);
     }
 }
+
+// 재귀 전위 순회
 void preorderTraversalRecursiveBinTreeNode(BinTreeNode *pRootNode)
 {
     if (pRootNode != NULL)
@@ -21,7 +23,7 @@ void preorderTraversalRecursiveBinTreeNode(BinTreeNode *pRootNode)
     }
 }
 
-// 재귀 중위 순회
+// 중위 순회
 void inorderTraversalRecursiveBinTree(BinTree *pBinTree)
 {
     if (pBinTree != NULL)
@@ -30,6 +32,7 @@ void inorderTraversalRecursiveBinTree(BinTree *pBinTree)
     }
 }
 
+// 재귀 중위 순회
 void inorderTraversalRecursiveBinTreeNode(BinTreeNode *pRootNode)
 {
     if (pRootNode != NULL)
@@ -40,7 +43,7 @@ void inorderTraversalRecursiveBinTreeNode(BinTreeNode *pRootNode)
     }
 }
 
-// 재귀 후위 순회
+// 후위 순회
 void postorderTraversalRecursiveBinTree(BinTree *pBinTree)
 {
     if (pBinTree != NULL)
@@ -49,6 +52,7 @@ void postorderTraversalRecursiveBinTree(BinTree *pBinTree)
     }
 }
 
+// 재귀 후위 순회
 void postorderTraversalRecursiveBinTreeNode(BinTreeNode *pRootNode)
 {
     if (pRootNode != NULL)

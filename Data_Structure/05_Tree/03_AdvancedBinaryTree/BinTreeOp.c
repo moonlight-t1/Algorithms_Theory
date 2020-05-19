@@ -23,6 +23,7 @@ BinTree *copyBinTree(BinTree *pSource)
     return pReturn;
 }
 
+// 이진 트리 재귀 복사
 BinTreeNode *copyBinTreeNode(BinTreeNode *pSourceNode)
 {
     BinTreeNode *pReturn = NULL;
@@ -61,6 +62,7 @@ int equalBinTree(BinTree *pFirst, BinTree *pSecond)
     return ret;
 }
 
+// 이진 트리 동일성 검사 재귀 전위 순회
 int equalBinTreeNode(BinTreeNode *pFirst, BinTreeNode *pSecond)
 {
     int ret = FALSE;
@@ -90,6 +92,7 @@ int getNodeCountBT(BinTree *pSource)
     return ret;
 }
 
+// 재귀 후위 순회를 이용한 이진 트리 노드 개수 구하기
 int getNodeCountBTNode(BinTreeNode *pSource)
 {
     int ret = 0;
@@ -112,6 +115,7 @@ int getLeafNodeCountBT(BinTree *pSource)
     return ret;
 }
 
+// 재귀를 이용한 이진 트리의 단말 노드 개수 구하기
 int getLeafNodeCountBTNode(BinTreeNode *pSource)
 {
     int ret = 0;
@@ -142,6 +146,7 @@ int getHeightBT(BinTree *pSource)
     return ret;
 }
 
+// 재귀를 이용한 이진 트리의 높이 구하기
 int getHeightBTNode(BinTreeNode *pSource)
 {
     int ret = 0;
@@ -183,6 +188,7 @@ void displayBinTree(BinTree *pTree)
     }
 }
 
+// 재귀를 이용한 이진 트리 구조 및 내용 출력
 void displayBinTreeNode(BinTreeNode *pNode, int level, char type)
 {
     int i = 0;

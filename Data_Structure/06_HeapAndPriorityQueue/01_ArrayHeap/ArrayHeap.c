@@ -75,15 +75,20 @@ void insertMaxHeapAH(ArrayMaxHeap *pHeap, HeapNode element)
 
         // Step 2
         // 부모 노드와 키 값 비교와 이동
+        // 루트 노드가 아니거나 현재 노드의 키 값이 부모 노드의 키 값보다 크다면
         while ((i != 1) && (element.key > pHeap->pElement[i / 2].key))
         {
+            // 현재 노드에 부모 노드의 키 값 대입
             pHeap->pElement[i] = pHeap->pElement[i / 2];
+            // 부모 노드 위치로 이동
             i /= 2;
         }
+        // 루프 빠져나와서 배열 i 위치에 element 값 최종 대입
         pHeap->pElement[i] = element;
     }
 }
 
+// 최대 히프에서의 삭제 연산
 HeapNode *deleteMaxHeapAH(ArrayMaxHeap *pHeap)
 {
     HeapNode *pReturn = NULL;

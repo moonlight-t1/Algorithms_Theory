@@ -4,7 +4,7 @@
 typedef struct BinTreeNodeType
 {
     char data;
-    int visited;
+    int visited; // 노드 방문 여부
 
     struct BinTreeNodeType *pLeftChild;
     struct BinTreeNodeType *pRightChild;

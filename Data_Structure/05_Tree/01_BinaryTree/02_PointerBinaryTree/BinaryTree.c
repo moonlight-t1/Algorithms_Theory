@@ -16,6 +16,8 @@ BinTree *makeBinTree(BinTreeNode rootNode)
         {
             // 이진 트리와 루트 노드 연결
             *(pReturn->pRootNode) = rootNode;
+
+            // 루트 노드 초기화
             pReturn->pRootNode->pLeftChild = NULL;
             pReturn->pRootNode->pRightChild = NULL;
         }
@@ -33,19 +35,6 @@ BinTree *makeBinTree(BinTreeNode rootNode)
     return pReturn;
 }
 
-// 트리의 루트 노드 반환
-BinTreeNode *getRootNodeBT(BinTree *pBinTree)
-{
-    BinTreeNode *pReturn = NULL;
-
-    if (pBinTree != NULL)
-    {
-        pReturn = pBinTree->pRootNode;
-    }
-
-    return pReturn;
-}
-
 // 왼쪽 자식 노드 추가
 BinTreeNode *insertLeftChildNodeBT(BinTreeNode *pParentNode, BinTreeNode element)
 {
@@ -58,9 +47,13 @@ BinTreeNode *insertLeftChildNodeBT(BinTreeNode *pParentNode, BinTreeNode element
             pParentNode->pLeftChild = (BinTreeNode *)malloc(sizeof(BinTreeNode));
             if (pParentNode->pLeftChild != NULL)
             {
+                // 자식 노드에 원소 대입
                 *(pParentNode->pLeftChild) = element;
+
+                // 자식 노드의 자식 노드 NULL로 초기화
                 pParentNode->pLeftChild->pLeftChild = NULL;
                 pParentNode->pLeftChild->pRightChild = NULL;
+                // 자식 노드 부모 노드와 연결
                 pReturn = pParentNode->pLeftChild;
             }
             else
@@ -88,9 +81,13 @@ BinTreeNode *insertRightChildNodeBT(BinTreeNode *pParentNode, BinTreeNode elemen
             pParentNode->pRightChild = (BinTreeNode *)malloc(sizeof(BinTreeNode));
             if (pParentNode->pRightChild != NULL)
             {
+                // 자식 노드에 원소 대입
                 *(pParentNode->pRightChild) = element;
+
+                // 자식 노드의 자식 노드 NULL로 초기화
                 pParentNode->pRightChild->pLeftChild = NULL;
                 pParentNode->pRightChild->pRightChild = NULL;
+                // 자식 노드 부모 노드와 연결
                 pReturn = pParentNode->pRightChild;
             }
             else
@@ -103,6 +100,19 @@ BinTreeNode *insertRightChildNodeBT(BinTreeNode *pParentNode, BinTreeNode elemen
             printf("Error. Left child node is already exist. insertLeftChildNodeBT()\n");
         }
     }
+    return pReturn;
+}
+
+// 트리의 루트 노드 반환
+BinTreeNode *getRootNodeBT(BinTree *pBinTree)
+{
+    BinTreeNode *pReturn = NULL;
+
+    if (pBinTree != NULL)
+    {
+        pReturn = pBinTree->pRootNode;
+    }
+
     return pReturn;
 }
 

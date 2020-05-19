@@ -5,13 +5,13 @@ typedef struct BinTreeNodeType
 {
     char data;
 
-    struct BinTreeNodeType *pLeftChild;
-    struct BinTreeNodeType *pRightChild;
+    struct BinTreeNodeType *pLeftChild;  // 왼쪽 자식 노드
+    struct BinTreeNodeType *pRightChild; // 오른쪽 자식 노드
 } BinTreeNode;
 
 typedef struct BinTreeType
 {
-    struct BinTreeNodeType *pRootNode;
+    struct BinTreeNodeType *pRootNode; // 루트 노드
 } BinTree;
 
 BinTree *makeBinTree(BinTreeNode rootNode);
