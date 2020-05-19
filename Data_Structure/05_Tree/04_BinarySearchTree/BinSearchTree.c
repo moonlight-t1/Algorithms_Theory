@@ -191,7 +191,7 @@ int deleteElementBST(BinSearchTree *pBinSearchTree, int key)
         pSuccessor->pLeftChild = pDelNode->pLeftChild;
         pSuccessor->pRightChild = pDelNode->pRightChild;
 
-        // 대체 노드 pSuccessor를 기존 삭제 노드이 부모 노드 pParentNode의 새로운 자식 노드로 설정
+        // 대체 노드 pSuccessor를 기존 삭제 노드의 부모 노드 pParentNode의 새로운 자식 노드로 설정
         if (pParentNode != NULL)
         {
             if (pParentNode->pLeftChild == pDelNode)
@@ -213,6 +213,7 @@ int deleteElementBST(BinSearchTree *pBinSearchTree, int key)
     // (c) 삭제 대상 노드의 자식 노드가 1개인 경우 처리
     else
     {
+        // 삭제 노드를 대체할 노드 찾기
         if (pDelNode->pLeftChild != NULL)
         {
             pChildNode = pDelNode->pLeftChild;
@@ -222,6 +223,7 @@ int deleteElementBST(BinSearchTree *pBinSearchTree, int key)
             pChildNode = pDelNode->pRightChild;
         }
 
+        // 대체할 노드를 삽입
         if (pParentNode != NULL)
         {
             if (pParentNode->pLeftChild == pDelNode)
@@ -233,6 +235,7 @@ int deleteElementBST(BinSearchTree *pBinSearchTree, int key)
                 pParentNode->pRightChild = pChildNode;
             }
         }
+        // 만약 부모 노드가 NULL이면 루트 노드를 삭제한 경우이다
         else
         {
             pBinSearchTree->pRootNode = pChildNode;
@@ -243,6 +246,7 @@ int deleteElementBST(BinSearchTree *pBinSearchTree, int key)
     return ret;
 }
 
+// 이진 탐색 트리에서의 검색 연산
 BinSearchTreeNode *searchRecursiveBST(BinSearchTree *pBinSearchTree, int key)
 {
     BinSearchTreeNode *pReturn = NULL;
@@ -309,6 +313,7 @@ BinSearchTreeNode *searchBST(BinSearchTree *pBinSearchTree, int key)
     return pReturn;
 }
 
+// 이진 탐색 트리 삭제
 void deleteBinSearchTree(BinSearchTree *pBinSearchTree)
 {
     if (pBinSearchTree != NULL)
@@ -318,6 +323,7 @@ void deleteBinSearchTree(BinSearchTree *pBinSearchTree)
     }
 }
 
+// 후위 순회 방식으로 메모리 해제
 void deleteBinSearchTreeInternal(BinSearchTreeNode *pTreeNode)
 {
     if (pTreeNode != NULL)
