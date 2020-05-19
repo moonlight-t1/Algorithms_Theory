@@ -11,6 +11,7 @@ void displayArrayQueue(ArrayQueue *pQueue)
     {
         printf("Queue Size : %d, Current Number of Nodes : %d\n", pQueue->maxElementCount, pQueue->currentElementCount);
 
+        // front를 기준으로 rear의 인덱스 값 계산
         maxElementIndex = pQueue->front + pQueue->currentElementCount;
         for (i = pQueue->front + 1; i <= maxElementIndex; i++)
         {

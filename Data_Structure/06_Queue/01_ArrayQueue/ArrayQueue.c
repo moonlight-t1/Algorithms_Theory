@@ -3,6 +3,7 @@
 #include <string.h>
 #include "ArrayQueue.h"
 
+// 큐 생성
 ArrayQueue *createArrayQueue(int maxElementCount)
 {
     ArrayQueue *pReturn = NULL;

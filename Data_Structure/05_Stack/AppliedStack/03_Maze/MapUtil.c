@@ -2,6 +2,17 @@
 #include <stdlib.h>
 #include "MapUtil.h"
 
+// 스택에 푸시 함수
+int pushLSMapPosition(LinkedStack *pStack, MapPosition data)
+{
+    StackNode node = {
+        0,
+    };
+    node.data = data;
+    return pushLS(pStack, node);
+}
+
+// 경로 찾는 함수
 void findPath(int mazeArray[HEIGHT][WIDTH], MapPosition startPos, MapPosition endPos, LinkedStack *pStack)
 {
     StackNode *pNode = NULL;
@@ -17,7 +28,7 @@ void findPath(int mazeArray[HEIGHT][WIDTH], MapPosition startPos, MapPosition en
         newPosition.direction = 0;
         pushLSMapPosition(pStack, newPosition);
 
-        // 움직일 다른 곳이 있고, 아직 출구룰 못 찾았다면 경로를 계속 찾는다
+        // 움직일 다른 곳이 있고, 아직 출구를 못 찾았다면 경로를 계속 찾는다
         while (isEmpty == FALSE && isFound == FALSE)
         {
             // 스택에서 위치 정보 및 방향 정보 팝
@@ -63,26 +74,20 @@ void findPath(int mazeArray[HEIGHT][WIDTH], MapPosition startPos, MapPosition en
                         }
                     }
                     // 기존 방향에 의한 새로운 위치로 이동할 수 없다면
-                    // 다른 방향으로 시도해 봉낟
+                    // 다른 방향으로 시도해 본다
                     else
                     {
                         direction++;
                     }
+
                 } // end-of-if
                 free(pNode);
+
             } // end-of-if
             isEmpty = isLinkedStackEmpty(pStack);
+
         } // end-of-while
     }
-}
-
-int pushLSMapPosition(LinkedStack *pStack, MapPosition data)
-{
-    StackNode node = {
-        0,
-    };
-    node.data = data;
-    return pushLS(pStack, node);
 }
 
 void ShowPath(LinkedStack *pStack, int mazeArray[HEIGHT][WIDTH])

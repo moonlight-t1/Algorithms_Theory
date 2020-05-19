@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
     // 실제 시뮬레이션의 메인 루틴
     for (currentTime = 0; currentTime < endTime; currentTime++)
     {
+        // 고객 도착
         processArrival(currentTime, pArrivalQueue, pWaitQueue);
 
         // 서비스 종료 처리

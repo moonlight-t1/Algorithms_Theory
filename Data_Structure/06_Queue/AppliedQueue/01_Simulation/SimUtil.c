@@ -95,17 +95,19 @@ QueueNode *processServiceNodeEnd(int currentTime, QueueNode *pServiceNode, int *
     }
 
     // 종료 처리
+    // 종료 시각 =  서비스 시작 시각 + 서비스 소요 시간
     endTime = pServiceNode->data.startTime + pServiceNode->data.serviceTime;
     if (endTime <= currentTime)
     {
+        // 현 대기 고객의  대기 시간 산출
         waitTime = pServiceNode->data.startTime - pServiceNode->data.arrivalTime;
 
-        (*pServiceUserCount)++;
-        (*pTotalWaitTime) += waitTime;
+        (*pServiceUserCount)++;        // 서비스 고객 숫자를 1 증가
+        (*pTotalWaitTime) += waitTime; // 전체 대기 시간에 현 고객 대기 시간 더해 전체 대기 시간 변경
 
-        pServiceNode->data.status = end;
-        pServiceNode->data.endTime = currentTime;
-        printSimCustomer(currentTime, pServiceNode->data);
+        pServiceNode->data.status = end;                   // 고객 상태값 변경
+        pServiceNode->data.endTime = currentTime;          // 종료시간 대입
+        printSimCustomer(currentTime, pServiceNode->data); // 고객 정보 출력
 
         free(pServiceNode);
         pReturn = NULL;

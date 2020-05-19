@@ -21,6 +21,7 @@ LinkedQueue *createLinkedQueue()
     return pReturn;
 }
 
+// 인큐
 int enqueueLQ(LinkedQueue *pQueue, QueueNode element)
 {
     int ret = FALSE;
@@ -58,6 +59,7 @@ int enqueueLQ(LinkedQueue *pQueue, QueueNode element)
     return ret;
 }
 
+// 디큐
 QueueNode *dequeueLQ(LinkedQueue *pQueue)
 {
     QueueNode *pReturn = NULL;
@@ -83,6 +85,7 @@ QueueNode *dequeueLQ(LinkedQueue *pQueue)
     return pReturn;
 }
 
+// 피크
 QueueNode *peekLQ(LinkedQueue *pQueue)
 {
     QueueNode *pReturn = NULL;

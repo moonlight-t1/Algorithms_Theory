@@ -63,6 +63,7 @@ int insertFrontLD(LinkedDeque *pDeque, DequeNode element)
     return ret;
 }
 
+// 노드 뒤 추가
 int insertRearLD(LinkedDeque *pDeque, DequeNode element)
 {
     int ret = FALSE;
@@ -102,6 +103,7 @@ int insertRearLD(LinkedDeque *pDeque, DequeNode element)
     return ret;
 }
 
+// 맨 앞 노드 제거
 DequeNode *deleteFrontLD(LinkedDeque *pDeque)
 {
     DequeNode *pReturn = NULL;
@@ -131,6 +133,7 @@ DequeNode *deleteFrontLD(LinkedDeque *pDeque)
     return pReturn;
 }
 
+// 맨 뒤 노드 삭제
 DequeNode *deleteRearLD(LinkedDeque *pDeque)
 {
     DequeNode *pReturn = NULL;
@@ -161,6 +164,7 @@ DequeNode *deleteRearLD(LinkedDeque *pDeque)
     return pReturn;
 }
 
+// 맨 앞 노드 peek
 DequeNode *peekFrontLD(LinkedDeque *pDeque)
 {
     DequeNode *pReturn = NULL;
@@ -174,6 +178,7 @@ DequeNode *peekFrontLD(LinkedDeque *pDeque)
     return pReturn;
 }
 
+// 맨 뒤 노드 peek
 DequeNode *peeRearLD(LinkedDeque *pDeque)
 {
     DequeNode *pReturn = NULL;
