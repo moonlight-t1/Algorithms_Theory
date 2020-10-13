@@ -1,3 +1,3 @@
-# Algorithms Theory
+# Data Structures and Algorithms
 
-## Data Sturucture
+## Data Structure and Algorithms in C++
